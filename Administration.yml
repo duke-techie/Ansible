@@ -1,0 +1,17 @@
+---
+- name: play1
+  hosts: web_server
+  become: true
+  tasks:
+    - name: install httpd
+      yum:
+         name: httpd
+         state: latest
+    - name: start service httpd
+      service:
+            name: httpd
+            state: started
+    - name: create index.html
+      copy:
+          content: "Wc to GIT + Ansible Project Set up"
+          dest: /var/www/html/index.html
