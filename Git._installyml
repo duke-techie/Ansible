@@ -1,0 +1,9 @@
+---
+- name: play1
+  hosts: web_server
+  become: true
+  tasks:
+    - name: install git
+      yum:
+         name: git
+         state: latest
