@@ -1,0 +1,9 @@
+---
+- name: play1
+  hosts: web_server
+  become: true
+  tasks:
+    - name: install docker
+      yum:
+         name: docker
+         state: latest
